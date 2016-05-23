@@ -1,1 +1,79 @@
-test
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <style>
+        #mdDiv {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 650px;
+            width: 500px;
+            background-color: blue;
+        }
+
+        #mdText {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin: 10px 10px 10px 10px;
+            padding: 3px 3px 3px 3px;
+            height: 630px;
+            width: 480px;
+            font-size: 18px;
+        }
+
+        #mdBtn {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            font-size: 18px;
+        }
+
+        #htmlDiv {
+            position: absolute;
+            top: 0px;
+            left: 500px;
+            height: 650px;
+            width: 900px;
+            background-color: red;
+        }
+
+        #htmlFrame {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin: 10px 10px 10px 10px;
+            padding: 0px 0px 0px 0px;
+            height: 630px;
+            width: 880px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="mdDiv" >
+        <textarea id="mdText"> # header </textarea>
+        <button id="mdBtn"> preview </button>
+        <script>
+            $('#mdBtn').click(function(){
+                $.post( "http://localhost:8888", {data: $('#mdText').val()}, function(data) {
+                    console.log(data);
+                });
+            });
+        </script>
+    </div>
+
+    <div id="htmlDiv">
+        <iframe id="htmlFrame" src="test.html"></iframe>
+    </div>
+
+
+</body>
+
+</html>
+
+
+
