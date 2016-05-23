@@ -70,7 +70,7 @@
         <script>
             $('#mdText').val('# header1\n## header2\n### header3\n\n---\n\n[Q] 1 + 1 = ?\n[A] 1\n[A#] 2\n[A] 3\n[A] 4');
             $('#mdBtn').click(function(){
-                $.post( "http://localhost:8888/preview", {data: $('#mdText').val()}, function(data) {
+                $.post("http://localhost:8888/preview", {data: $('#mdText').val()}, function(data) {
                     console.log(data);
                     putHtml2iframe('htmlFrame', data);
                 });
