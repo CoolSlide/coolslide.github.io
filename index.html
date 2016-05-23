@@ -47,7 +47,6 @@
             left: 500px;
             height: 650px;
             width: 900px;
-            background-color: red;
         }
 
         #htmlFrame {
@@ -70,7 +69,7 @@
         <script>
             $('#mdText').val('# header1\n## header2\n### header3\n\n---\n\n[Q] 1 + 1 = ?\n[A] 1\n[A#] 2\n[A] 3\n[A] 4');
             $('#mdBtn').click(function(){
-                $.post("http://localhost:8888/preview", {data: $('#mdText').val()}, function(data) {
+                $.post("http://52.27.9.64:60000/preview", {data: $('#mdText').val()}, function(data) {
                     console.log(data);
                     putHtml2iframe('htmlFrame', data);
                 });
