@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
     <script>
@@ -59,6 +60,17 @@
             width: 1110px;
         }
 
+        #overlap{
+            position: absolute;
+            background-color: trasparent;
+            top: 0px;
+            left: 0px;
+            margin: 10px 10px 10px 10px;
+            padding: 0px 0px 0px 0px;
+            height: 630px;
+            width: 1100px;
+        }
+
         #useDiv {
             position: absolute;
             top: 650px;
@@ -85,24 +97,42 @@
         <textarea id="mdText"></textarea>
         <button id="mdBtn"> preview </button>
         <script>
-            $('#mdText').val('# header1\n## header2\n### header3\n\n---\n\n[Q] 1 + 1 = ?\n[A] 1\n[A#] 2\n[A] 3\n[A] 4');
-            $('#mdBtn').click(function(){
-                $.post("http://52.27.9.64:60000/preview", {data: $('#mdText').val()}, function(data) {
-                    console.log(data);
-                    putHtml2iframe('htmlFrame', data);
+            $(function(){
+                var initStr = '# header1\n## header2\n### header3\n\n---\n\n[Q] 1 + 1 = ?\n[A] 1\n[A#] 2\n[A] 3\n[A] 4';
+                initStr += '\n----\n![](https://avatars3.githubusercontent.com/u/19519576?v=3&s=200)\n\n---\n\n#End';
+
+                $('#mdText').val(initStr);
+                $('#mdBtn').click(function(){
+                    $.post("http://52.27.9.64:60000/preview", {data: $('#mdText').val()}, function(data){
+                        putHtml2iframe('htmlFrame', data);
+                    });
+                    putHtml2iframe('htmlFrame', '');
                 });
-                putHtml2iframe('htmlFrame', '');
+
+                $('#mdText').click(function(){
+                    alert('md');
+                });
+
+                $("#overlap").on("click",function(){
+                    alert("click");
+                    $("#overlap").css("z-index",-1);
+                });
+
+                $("#htmlFrame").on("mouseleave",function(){
+                    $("#overlap").css("z-index",1);
+                });
             });
         </script>
     </div>
 
     <div id="htmlDiv">
         <iframe id="htmlFrame"></iframe>
+        <div id="overlap"></div>
     </div>
 
     <div id="useDiv">
         <div id="useText">
-            <h1 align="center" style="margin-top:3px;"> 語法說明 </h1>
+            <!--h1 align="center" style="margin-top:3px;"> 語法說明 </h1-->
             <h3 style="margin-top:3px;"> # header1</h3>
             <h3 style="margin-top:3px;"> ## header2</h3>
             <h3 style="margin-top:3px;"> ### header3</h3>
