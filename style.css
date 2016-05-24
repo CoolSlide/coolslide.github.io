@@ -1,0 +1,53 @@
+#mdDiv {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 650px;
+    width: 300px;
+    padding: 10px;
+    background-color: blue;
+}
+
+#mdText {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    font-size: 18px;
+}
+
+#mdBtn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-size: 18px;
+}
+
+#htmlDiv {
+    position: absolute;
+    top: 0px;
+    left: 320px;
+    height: 650px;
+    width: 1110px;
+    padding: 10px;
+    background-color: red;
+}
+
+#htmlFrame {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+}
+
+#useDiv {
+    position: absolute;
+    top: 670px;
+    left: 0px;
+    height: 450px;
+    width: 1430px;
+    padding: 10px;
+    background-color: yellow;
+}
+
+#useText {
+    font-size: 18px;
+}
