@@ -1,6 +1,5 @@
 $(function(){
     var initStr = '';
-    initStr += 'header0\n';
     initStr += '### header1\n';
     initStr += '## header2\n';
     initStr += '# header3\n';
@@ -13,7 +12,6 @@ $(function(){
     initStr += '\n';
     initStr += '---\n';
     initStr += '\n';
-    initStr += '[link0](http://coolslide.github.io)\n'
     initStr += '### [link1](http://coolslide.github.io)\n'
     initStr += '## [link2](http://coolslide.github.io)\n'
     initStr += '# [link3](http://coolslide.github.io)\n'
