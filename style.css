@@ -72,9 +72,10 @@
     height: 500px;
     width: 1420px;
     padding: 10px;
-    background-color: yellow;
+    background-color: #175D92;
 }
 
 #useText {
     font-size: 18px;
+    color: #CCE3FF;
 }
