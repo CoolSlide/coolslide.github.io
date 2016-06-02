@@ -3,6 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var exec = require('exec');
+var coolSlide = require('cool-slide');
 
 var app = express();
 
@@ -25,14 +26,9 @@ app.get('/', function(req, res){
 
 app.post('/preview', function(req, res){
     console.log('receive ' + req.method + ' request: ' + req.url);
-    var md = req.body['data'];
-    console.log(md);
-    fs.writeFileSync('tmp.md', md);
-    exec(['cool-slide', 'tmp.md', 'tmp.html'], function(err, out, code){
-        if(err) throw err;
-        if(out === 'success');
-        res.sendFile(path.resolve('tmp.html'));
-    });
+    var mdStr = req.body['data'];
+    var htmlStr = coolSlide(mdStr);
+    res.send(htmlStr);
 });
 
 app.listen(8888);

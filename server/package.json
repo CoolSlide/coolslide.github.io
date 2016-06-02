@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.1",
+    "cool-slide": "github:coolslide/cool-slide",
     "exec": "^0.2.1",
     "express": "^4.13.4"
   }
