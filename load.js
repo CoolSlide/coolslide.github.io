@@ -1,6 +1,26 @@
 $(function(){
-    var initStr = '# header1\n## header2\n### header3\n\n---\n\n[Q] 1 + 1 = ?\n[A] 1\n[A#] 2\n[A] 3\n[A] 4';
-    initStr += '\n----\n![](https://avatars3.githubusercontent.com/u/19519576?v=3&s=200)\n\n---\n\n#End';
+    var initStr = '';
+    initStr += 'header0\n';
+    initStr += '### header1\n';
+    initStr += '## header2\n';
+    initStr += '# header3\n';
+    initStr += '\n';
+    initStr += '---\n';
+    initStr += '\n';
+    initStr += '# Page2\n';
+    initStr += '----\n';
+    initStr += '![](http://imgur.com/jP236lr.png)\n';
+    initStr += '\n';
+    initStr += '---\n';
+    initStr += '\n';
+    initStr += '[link0](http://coolslide.github.io)\n'
+    initStr += '### [link1](http://coolslide.github.io)\n'
+    initStr += '## [link2](http://coolslide.github.io)\n'
+    initStr += '# [link3](http://coolslide.github.io)\n'
+    initStr += '\n';
+    initStr += '---\n';
+    initStr += '\n';
+    initStr += '# End'
 
     var textArea = $('#mdText');
     textArea.val(initStr);
