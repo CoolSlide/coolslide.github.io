@@ -11,8 +11,4 @@ $(function(){
         });
         putHtml2iframe('htmlFrame', '');
     });
-
-    $('#mdText').click(function(){
-        alert('md');
-    });
 });
